@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block heading %} Заметки {% endblock %} {% block body %}
+
+<ul>
+    {% for note in  %}
+    <li>{{ note }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{{ url_for('index') }}" method="post">
+    <input type="text" name="note" placeholder="Enter Note Here">
+    <button>Добавить заметку</button>
+</form>
+{% endblock %}
